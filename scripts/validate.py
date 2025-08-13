@@ -45,11 +45,44 @@ def validate_toolsets() -> int:
     return errors
 
 
+def validate_mcp() -> int:
+    schema = yaml.safe_load((SCHEMAS / "mcp.schema.yaml").read_text())
+    validator = Draft7Validator(schema)
+    errors = 0
+    mcp = yaml.safe_load((COP / "mcp" / "servers.yaml").read_text())
+    for err in validator.iter_errors(mcp):
+        print(f"MCP servers: {err.message}")
+        errors += 1
+    return errors
+
+
+def validate_instructions() -> int:
+    # We allow markdown instructions; just assert file exists and non-empty.
+    md = COP / "instructions.md"
+    if not md.exists() or not md.read_text().strip():
+        print("instructions.md missing or empty")
+        return 1
+    # Optional JSON form validated if present.
+    j = COP / "instructions.json"
+    if j.exists():
+        schema = json.loads((SCHEMAS / "instructions.schema.json").read_text())
+        validator = Draft7Validator(schema)
+        data = json.loads(j.read_text())
+        errs = 0
+        for err in validator.iter_errors(data):
+            print(f"Instructions JSON: {err.message}")
+            errs += 1
+        return errs
+    return 0
+
+
 def main() -> int:
     errs = 0
     errs += validate_prompts()
     errs += validate_modes()
     errs += validate_toolsets()
+    errs += validate_mcp()
+    errs += validate_instructions()
     if errs:
         print(f"Validation failed: {errs} errors")
         return 1

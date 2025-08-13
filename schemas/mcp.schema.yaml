@@ -1,0 +1,16 @@
+$schema: http://json-schema.org/draft-07/schema#
+$id: https://example.com/schemas/mcp.schema.yaml
+type: object
+properties:
+  servers:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        url:
+          type: string
+      required: [name, url]
+required: [servers]
+additionalProperties: false

@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/instructions.schema.json",
+  "type": "object",
+  "properties": {
+    "title": {"type": "string"},
+    "rules": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["title"],
+  "additionalProperties": true
+}
