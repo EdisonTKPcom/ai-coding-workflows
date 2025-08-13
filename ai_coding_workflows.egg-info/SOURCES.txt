@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+ai_coding_workflows.egg-info/PKG-INFO
+ai_coding_workflows.egg-info/SOURCES.txt
+ai_coding_workflows.egg-info/dependency_links.txt
+ai_coding_workflows.egg-info/entry_points.txt
+ai_coding_workflows.egg-info/requires.txt
+ai_coding_workflows.egg-info/top_level.txt
+ai_workflows/__init__.py
+ai_workflows/cli.py
+ai_workflows/generator.py
+ai_workflows/git_ai.py

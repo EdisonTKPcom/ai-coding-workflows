@@ -1,0 +1,5 @@
+{
+  "title": "PR Risk Review",
+  "inputs": ["diff", "risks?"],
+  "body": "Review this diff for security, perf, and data-loss risks.\n#repo\n#security\n@refactor\n/risk_review"
+}

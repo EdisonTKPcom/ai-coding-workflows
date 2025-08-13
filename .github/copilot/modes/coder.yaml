@@ -1,0 +1,5 @@
+name: coder
+prompt_file: pr_risk_review.json
+context: [repo]
+extensions: []
+commands: []

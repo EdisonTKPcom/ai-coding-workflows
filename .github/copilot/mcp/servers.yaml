@@ -1,0 +1,5 @@
+servers:
+  - name: filesystem
+    url: mcp://filesystem
+  - name: git
+    url: mcp://git

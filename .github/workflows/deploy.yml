@@ -1,0 +1,8 @@
+name: Deploy (placeholder)
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Add deployment steps here"

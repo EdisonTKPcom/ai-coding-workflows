@@ -1,0 +1,5 @@
+name: reviewer
+prompt_file: pr_risk_review.json
+context: [repo, security]
+extensions: [refactor]
+commands: [risk_review]

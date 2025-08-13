@@ -1,0 +1,14 @@
+$schema: http://json-schema.org/draft-07/schema#
+$id: https://example.com/schemas/toolset.schema.yaml
+type: object
+properties:
+  tools:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+      required: [name]
+required: [tools]
+additionalProperties: false

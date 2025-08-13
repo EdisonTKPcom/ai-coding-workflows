@@ -1,0 +1,5 @@
+tools:
+  - name: shell
+  - name: fs
+  - name: git
+  - name: http

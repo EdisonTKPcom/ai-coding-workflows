@@ -1,0 +1,2 @@
+[console_scripts]
+aiwf = ai_workflows.cli:main
